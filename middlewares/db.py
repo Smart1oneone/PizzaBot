@@ -19,7 +19,7 @@ class DataBaseSession(BaseMiddleware):
     ) -> Any:
         async with self.session_pool() as session:
             data['session'] = session
-            return await handler(event, data)ш
+            return await handler(event, data)
 
 
 # class CounterMiddleware(BaseMiddleware):
