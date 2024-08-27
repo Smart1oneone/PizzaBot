@@ -6,15 +6,13 @@ from database.orm_query import orm_add_banner_description, orm_create_categories
 
 from common.texts_for_db import categories, description_for_info_pages
 
-from dotenv import find_dotenv, load_dotenv
-
-load_dotenv(find_dotenv())
-
+#from .env file:
+# DB_LITE=sqlite+aiosqlite:///my_base.db
 # DB_URL=postgresql+asyncpg://login:password@localhost:5432/db_name
 
-engine = create_async_engine(os.getenv('DB_LITE'), echo=True)
+# engine = create_async_engine(os.getenv('DB_LITE'), echo=True)
 
-# engine = create_async_engine(os.getenv('DB_URL'), echo=True)
+engine = create_async_engine(os.getenv('DB_URL'), echo=True)
 
 session_maker = async_sessionmaker(bind=engine, class_=AsyncSession, expire_on_commit=False)
 

@@ -1,6 +1,6 @@
 from aiogram.types import InputMediaPhoto
 from sqlalchemy.ext.asyncio import AsyncSession
-#comment
+
 from database.orm_query import (
     orm_add_to_cart,
     orm_delete_from_cart,
